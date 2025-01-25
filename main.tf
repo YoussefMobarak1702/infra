@@ -1,7 +1,6 @@
 terraform {
     backend "gcs" { 
       bucket  = "terraform-state-jb-cicdprjct"
-      prefix  = "prod"
     }
 }
 
