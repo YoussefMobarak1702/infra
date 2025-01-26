@@ -117,7 +117,7 @@ resource "kubernetes_ingress" "load_balancer" {
     rules {
       http {
         path {
-          path     = "/app1"
+          path      = "/app1"
           path_type = "Prefix"
           backend {
             service {
@@ -131,7 +131,7 @@ resource "kubernetes_ingress" "load_balancer" {
         }
 
         path {
-          path     = "/app2"
+          path      = "/app2"
           path_type = "Prefix"
           backend {
             service {
