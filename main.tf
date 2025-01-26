@@ -80,7 +80,7 @@ resource "kubernetes_service" "app1_service" {
       app = "https://github.com/YoussefMobarak1702/app1"
     }
 
-    ports {
+    port {
       port        = 80
       target_port = 8080
     }
@@ -99,7 +99,7 @@ resource "kubernetes_service" "app2_service" {
       app = "https://github.com/YoussefMobarak1702/app1"
     }
 
-    ports {
+    port {
       port        = 80
       target_port = 9090
     }
@@ -114,11 +114,11 @@ resource "kubernetes_ingress" "load_balancer" {
   }
 
   spec {
-    rules {
+    rule {
       http {
         path {
-          path     = "/app1"
-          path_type = "Prefix"
+          path      = "/app1"
+          
           backend {
             service {
               name = "app1-service"
@@ -131,8 +131,7 @@ resource "kubernetes_ingress" "load_balancer" {
         }
 
         path {
-          path     = "/app2"
-          path_type = "Prefix"
+          path      = "/app2"
           backend {
             service {
               name = "app2-service"
